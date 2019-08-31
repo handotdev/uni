@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "PTSansPro";
+    src: url("../fonts/PTSansPro-Light.otf") format("opentype")
+}
+
+body {
+    background-color: #1B1F23;
+    font-family: "PTSansPro";
+}
+
+.uni-nav {
+    background-color: #1B1F23;
+    height: 130px;
+}
+
+
+.primary {
+    color: white;
+}
+
+.secondary {
+    color: gray;
+    margin: 0 0 50px 0;
+}
+
+.filter-label {
+    color: white;
+}
+
+.filter-badge {
+    background-color: #2F363D;
+    color: #F28CB0;
+}
+
+.sidebar {
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+}
+
+.filter {
+    margin: 10px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    background-color: #1B1F23;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.f-act {
+    background-color: #F28CB0;
+}
