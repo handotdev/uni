@@ -51,3 +51,8 @@ body {
 .f-act {
     background-color: #F28CB0;
 }
+
+.icon {
+    height: 20px;
+    widows: 20px;
+}
