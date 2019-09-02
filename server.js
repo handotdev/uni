@@ -7,7 +7,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 app.use(express.static(__dirname + '/public'));
 
-app.post(`/api/designer`, (req, res) => {
+app.post(`/api/creative`, (req, res) => {
 
   client.connect(err => {
     if (err) throw err;
@@ -32,7 +32,7 @@ app.post(`/api/designer`, (req, res) => {
   })
 })
 
-app.get(`/api/designers`, (req, res) => {
+app.get(`/api/creatives`, (req, res) => {
   
     let roles = req.query.roles;
     if (roles) {
@@ -60,22 +60,6 @@ app.get(`/api/designers`, (req, res) => {
         });
     })
 });
-
-app.get(`/api/test`, (req, res) => {
-  client.connect(err => {
-    if (err) throw err;
-
-    const db = client.db('uni');
-
-    const collection = db.collection('creatives');
-    // Find some documents
-    collection.find({"roles" : { $in : ['write', 'video']}}).toArray((err, docs) => {
-    if (err) throw err;
-      res.send(docs);
-      client.close();
-    });
-  })
-})
 
 const PORT = process.env.PORT || 8001;
 app.listen(PORT, () => {
