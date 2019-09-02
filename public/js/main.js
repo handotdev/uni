@@ -54,8 +54,13 @@ const filter = (btn) => {
     if ($(`#${btn}-c`).attr('class').split(/\s+/).includes(active)) {
         $(`#${btn}-c`).removeClass(active);
         $(`#${btn}-i`).attr('stroke', '#FFF');
+
+        $(`#fl-${btn}`).remove();
+
     } else {
         $(`#${btn}-c`).addClass(active);
         $(`#${btn}-i`).attr('stroke', '#1B1F23');
+
+        $(`#filter-label`).append(` <span id="fl-${btn}" class="badge badge-pill filter-badge">${btn.toUpperCase()}</span>`)
     }
 }
