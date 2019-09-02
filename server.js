@@ -2,51 +2,52 @@ const express = require('express');
 const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://root:6atKluiQ93uD7tHW@cluster0-iyhxj.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:SweetTea@foodful-cluster-msulm.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-const dbName = 'uni';
-
-const apiKey = '422D';
 
 app.use(express.static(__dirname + '/public'));
+
+app.post(`/api/designer`, (req, res) => {
+
+  client.connect(err => {
+    if (err) throw err;
+
+    const name = 'Zain Khoja';
+    const pic = 'https://i.postimg.cc/gjd103FS/zain.jpg';
+    const role = ['writer'];
+    const tag = '@zainkho';
+    const bio = 'Design @GitHub. Student @Cornell. Sweet tea sommelier. Constantly looking for tv shows to binge.';
+    const site = 'zainkho.com';
+    const social = {twitter: '', linkedin: ''};
+
+    const db = client.db('uni');
+
+    const collection = db.collection('creatives');
+
+    collection.insertOne({name: name, pic: pic, role: role, tag: tag, bio: bio, site: site, social: social}, (err, result) => {
+      console.log(result);
+      res.end();
+      client.close();
+    });
+  })
+})
 
 app.get(`/api/designers`, (req, res) => {
     const key = req.query.key;
 
-    if (key === apiKey) {
-        client.connect(err => {
-            if (err) throw err;
+    client.connect(err => {
+        if (err) throw err;
 
-            const db = client.db(dbName);
+        const db = client.db('uni');
 
-            findDocuments(db, docs => {
-                res.send(docs);
-                client.close();
-            });
-        })
-    } else {
-        res.end();
-    }
-
-    const insertDocuments = (db, callback) => {
-        // Get the documents collection
-        const collection = db.collection('documents');
-        // Insert some documents
-        collection.insertMany([{a : 1}, {a : 2}, {a : 3}],(err, result) => {
-          console.log(result);
-          callback(result);
-        });
-      }
-
-    const findDocuments = (db, callback) => {
-        // Get the documents collection
-        const collection = db.collection('documents');
+        const collection = db.collection('creatives');
         // Find some documents
         collection.find({}).toArray(function(err, docs) {
-          if (err) throw err;
-          callback(docs);
+        if (err) throw err;
+          res.send(docs);
+          client.close();
         });
-      }
+    })
 });
 
 const PORT = process.env.PORT || 8001;
