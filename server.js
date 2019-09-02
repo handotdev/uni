@@ -33,7 +33,11 @@ app.post(`/api/designer`, (req, res) => {
 })
 
 app.get(`/api/designers`, (req, res) => {
-    const key = req.query.key;
+  
+    let roles = req.query.roles;
+    if (roles) {
+      roles = roles.split(',');
+    }
 
     client.connect(err => {
         if (err) throw err;
@@ -42,13 +46,36 @@ app.get(`/api/designers`, (req, res) => {
 
         const collection = db.collection('creatives');
         // Find some documents
-        collection.find({}).toArray(function(err, docs) {
+
+        let filter = {};
+
+        if (roles !== undefined) {
+          filter = {"roles": { $in : roles}};
+        }
+
+        collection.find(filter).toArray((err, docs) => {
         if (err) throw err;
           res.send(docs);
           client.close();
         });
     })
 });
+
+app.get(`/api/test`, (req, res) => {
+  client.connect(err => {
+    if (err) throw err;
+
+    const db = client.db('uni');
+
+    const collection = db.collection('creatives');
+    // Find some documents
+    collection.find({"roles" : { $in : ['write', 'video']}}).toArray((err, docs) => {
+    if (err) throw err;
+      res.send(docs);
+      client.close();
+    });
+  })
+})
 
 const PORT = process.env.PORT || 8001;
 app.listen(PORT, () => {
