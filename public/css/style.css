@@ -47,6 +47,11 @@ body {
     padding: 0;
 }
 
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
 .sidebar {
     -ms-flex: 0 0 100px;
     flex: 0 0 100px;
