@@ -43,6 +43,10 @@ body {
     color: #F28CB0;
 }
 
+.btn {
+    padding: 0;
+}
+
 .sidebar {
     -ms-flex: 0 0 100px;
     flex: 0 0 100px;

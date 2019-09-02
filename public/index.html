@@ -49,51 +49,65 @@
 
                 <div class="row">
                     <div class="col sidebar">
-                        <span id="art" class="filter">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12.6667 2H3.33333C2.59695 2 2 2.59695 2 3.33333V12.6667C2 13.403 2.59695 14 3.33333 14H12.6667C13.403 14 14 13.403 14 12.6667V3.33333C14 2.59695 13.403 2 12.6667 2Z" />
-                                <path d="M5.66667 6.66667C6.21895 6.66667 6.66667 6.21895 6.66667 5.66667C6.66667 5.11438 6.21895 4.66667 5.66667 4.66667C5.11438 4.66667 4.66667 5.11438 4.66667 5.66667C4.66667 6.21895 5.11438 6.66667 5.66667 6.66667Z"/>
-                                <path d="M14 10L10.6667 6.66667L3.33333 14"/>
-                            </svg>
-                        </span>
-                        <span id="code" class="filter f-act">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        <button class="btn" onClick="filter('art')">
+                            <span id="art-c" class="filter">
+                                <svg id="art-i" class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12.6667 2H3.33333C2.59695 2 2 2.59695 2 3.33333V12.6667C2 13.403 2.59695 14 3.33333 14H12.6667C13.403 14 14 13.403 14 12.6667V3.33333C14 2.59695 13.403 2 12.6667 2Z" />
+                                    <path d="M5.66667 6.66667C6.21895 6.66667 6.66667 6.21895 6.66667 5.66667C6.66667 5.11438 6.21895 4.66667 5.66667 4.66667C5.11438 4.66667 4.66667 5.11438 4.66667 5.66667C4.66667 6.21895 5.11438 6.66667 5.66667 6.66667Z"/>
+                                    <path d="M14 10L10.6667 6.66667L3.33333 14"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="btn" onClick="filter('code')">
+                        <span id="code-c" class="filter f-act">
+                            <svg id="code-i" class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M10.6667 12L14.6667 8L10.6667 4"/>
                                 <path d="M5.33333 4L1.33333 8L5.33333 12"/>
                             </svg>
                         </span>
-                        <span id="design" class="filter f-act">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        </button>
+                        <button class="btn" onClick="filter('design')">
+                        <span id="design-c" class="filter f-act">
+                            <svg id="design-i" class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M8 12.6667L12.6667 8L14.6667 10L10 14.6667L8 12.6667Z"/>
                                     <path d="M12 8.66667L11 3.66667L1.33334 1.33333L3.66667 11L8.66667 12L12 8.66667Z"/>
                                     <path d="M1.33334 1.33333L6.39067 6.39067"/>
                                     <path d="M7.33333 8.66667C8.06971 8.66667 8.66667 8.06971 8.66667 7.33333C8.66667 6.59695 8.06971 6 7.33333 6C6.59695 6 6 6.59695 6 7.33333C6 8.06971 6.59695 8.66667 7.33333 8.66667Z"/>
                             </svg>
                         </span>
-                        <span id="music" class="filter">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        </button>
+                        <button class="btn" onClick="filter('music')">
+                        <span id="music-c" class="filter">
+                            <svg id="music-i" class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M6 12V3.33333L14 2V10.6667"/>
                                     <path d="M4 14C5.10457 14 6 13.1046 6 12C6 10.8954 5.10457 10 4 10C2.89543 10 2 10.8954 2 12C2 13.1046 2.89543 14 4 14Z"/>
                                     <path d="M12 12.6667C13.1046 12.6667 14 11.7712 14 10.6667C14 9.5621 13.1046 8.66667 12 8.66667C10.8954 8.66667 10 9.5621 10 10.6667C10 11.7712 10.8954 12.6667 12 12.6667Z"/>
                             </svg>
                         </span>
-                        <span id="photo" class="filter">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        </button>
+                        <button class="btn" onClick="filter('photo')">
+                        <span id="photo-c" class="filter">
+                            <svg id="photo-i" class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M15.3333 12.6667C15.3333 13.0203 15.1929 13.3594 14.9428 13.6095C14.6928 13.8595 14.3536 14 14 14H2.00001C1.64638 14 1.30724 13.8595 1.0572 13.6095C0.807148 13.3594 0.666672 13.0203 0.666672 12.6667V5.33333C0.666672 4.97971 0.807148 4.64057 1.0572 4.39052C1.30724 4.14048 1.64638 4 2.00001 4H4.66667L6.00001 2H10L11.3333 4H14C14.3536 4 14.6928 4.14048 14.9428 4.39052C15.1929 4.64057 15.3333 4.97971 15.3333 5.33333V12.6667Z"/>
                                     <path d="M7.99999 11.3333C9.47275 11.3333 10.6667 10.1394 10.6667 8.66667C10.6667 7.19391 9.47275 6 7.99999 6C6.52724 6 5.33333 7.19391 5.33333 8.66667C5.33333 10.1394 6.52724 11.3333 7.99999 11.3333Z"/>
                             </svg>
                         </span>
-                        <span id="video" class="filter f-act">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        </button>
+                        <button class="btn" onClick="filter('video')">
+                        <span id="video-c" class="filter f-act">
+                            <svg id="video-i" class="icon" viewBox="0 0 16 16" stroke="#1B1F23" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M15.3333 4.66667L10.6667 8L15.3333 11.3333V4.66667Z"/>
                                     <path d="M9.33334 3.33333H2.00001C1.26363 3.33333 0.666672 3.93029 0.666672 4.66667V11.3333C0.666672 12.0697 1.26363 12.6667 2.00001 12.6667H9.33334C10.0697 12.6667 10.6667 12.0697 10.6667 11.3333V4.66667C10.6667 3.93029 10.0697 3.33333 9.33334 3.33333Z"/>
                             </svg>
                         </span>
-                        <span id="write" class="filter">
-                            <svg class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
+                        </button>
+                        <button class="btn" onClick="filter('write')">
+                        <span id="write-c" class="filter">
+                            <svg id="write-i" class="icon" viewBox="0 0 16 16" stroke="#FFF" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M11.3333 2C11.5084 1.8249 11.7163 1.68601 11.9451 1.59125C12.1738 1.49649 12.419 1.44772 12.6667 1.44772C12.9143 1.44772 13.1595 1.49649 13.3883 1.59125C13.617 1.68601 13.8249 1.8249 14 2C14.1751 2.1751 14.314 2.38296 14.4087 2.61174C14.5035 2.84051 14.5523 3.08571 14.5523 3.33333C14.5523 3.58096 14.5035 3.82615 14.4087 4.05493C14.314 4.2837 14.1751 4.49157 14 4.66667L5 13.6667L1.33333 14.6667L2.33333 11L11.3333 2Z"/>
                             </svg>
                         </span>
+                        </button>
                     </div>
                     <div class="col mb-5">
                         <div id="creatives" class="row">

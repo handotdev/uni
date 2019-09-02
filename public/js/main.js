@@ -47,3 +47,15 @@ jQuery.get( "api/designers", data => {
     $("#creatives").append(html);
   });
 });
+
+const filter = (btn) => {
+
+    const active = 'f-act'
+    if ($(`#${btn}-c`).attr('class').split(/\s+/).includes(active)) {
+        $(`#${btn}-c`).removeClass(active);
+        $(`#${btn}-i`).attr('stroke', '#FFF');
+    } else {
+        $(`#${btn}-c`).addClass(active);
+        $(`#${btn}-i`).attr('stroke', '#1B1F23');
+    }
+}
