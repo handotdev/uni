@@ -12,19 +12,19 @@ app.post(`/api/creative`, (req, res) => {
   client.connect(err => {
     if (err) throw err;
 
-    const name = 'Katie Go';
-    const pic = 'https://i.postimg.cc/HxDyPDNM/cecilia.jpg';
-    const role = ['writer', 'designer'];
-    const tag = '@alohakatiex';
-    const bio = 'Katie is a YouTuber, GO-getter, and tropigal from Manila, Philippines. When she’s not creating videos, she\'s fangirling over YA novels.';
-    const site = 'youtube.com/alohakatiex';
-    const social = {instagram: '', facebook: ''};
+    const name = 'Thomas Lu';
+    const pic = 'https://i.postimg.cc/PJyS27WG/68668916-672756876463172-3988199669200060416-o.jpg';
+    const roles = ['code', 'design'];
+    const tag = '@thomas_a_lu';
+    const bio = 'Thomas is an Arizonian studying CS at Cornell. He\'s also interested in design, sustainability, finance, and (most importantly) boba.';
+    const site = 'thomaslu.me';
+    const social = {github: '', linkedin: ''};
 
     const db = client.db('uni');
 
     const collection = db.collection('creatives');
 
-    collection.insertOne({name: name, pic: pic, role: role, tag: tag, bio: bio, site: site, social: social}, (err, result) => {
+    collection.insertOne({name: name, pic: pic, roles: roles, tag: tag, bio: bio, site: site, social: social}, (err, result) => {
       console.log(result);
       res.end();
       client.close();
