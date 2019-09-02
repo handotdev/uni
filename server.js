@@ -12,13 +12,13 @@ app.post(`/api/designer`, (req, res) => {
   client.connect(err => {
     if (err) throw err;
 
-    const name = 'Zain Khoja';
-    const pic = 'https://i.postimg.cc/gjd103FS/zain.jpg';
-    const role = ['writer'];
-    const tag = '@zainkho';
-    const bio = 'Design @GitHub. Student @Cornell. Sweet tea sommelier. Constantly looking for tv shows to binge.';
-    const site = 'zainkho.com';
-    const social = {twitter: '', linkedin: ''};
+    const name = 'Katie Go';
+    const pic = 'https://i.postimg.cc/HxDyPDNM/cecilia.jpg';
+    const role = ['writer', 'designer'];
+    const tag = '@alohakatiex';
+    const bio = 'Katie is a YouTuber, GO-getter, and tropigal from Manila, Philippines. When she’s not creating videos, she\'s fangirling over YA novels.';
+    const site = 'youtube.com/alohakatiex';
+    const social = {instagram: '', facebook: ''};
 
     const db = client.db('uni');
 
