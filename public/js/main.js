@@ -51,8 +51,8 @@ function getCreatives(roles = []) {
           })
 
           let rolesHTML = ``;
-          let circleRight = 10;
-          let connectRight = 30;
+          let circleRight = 5;
+          let connectRight = circleRight + 20;
           card.roles.map((role, i) => {
               rolesHTML += `<span class="role-circle" style="right:${circleRight}px;">
                                 <svg class="role-icon" viewBox="0 0 16 16" stroke="#F28CB0" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">

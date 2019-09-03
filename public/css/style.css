@@ -133,3 +133,10 @@ body {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+@media (max-width: 600px) {
+    .sidebar {
+        -ms-flex: 0 0 1000px;
+        flex: 0 0 1000px;
+    }
+}
