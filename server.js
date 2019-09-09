@@ -12,12 +12,12 @@ app.post(`/api/creative`, (req, res) => {
   client.connect(err => {
     if (err) throw err;
 
-    const name = 'Thomas Lu';
-    const pic = 'https://i.postimg.cc/PJyS27WG/68668916-672756876463172-3988199669200060416-o.jpg';
+    const name = 'Han Wang';
+    const pic = 'https://i.postimg.cc/K8KBNTLm/han.jpg';
     const roles = ['code', 'design'];
-    const tag = '@thomas_a_lu';
-    const bio = 'Thomas is an Arizonian studying CS at Cornell. He\'s also interested in design, sustainability, finance, and (most importantly) boba.';
-    const site = 'thomaslu.me';
+    const tag = '@hanywang';
+    const bio = 'Han is a software engineer and all-around nice guy. He’s current working to improve agricultural technologies. He also built this site.';
+    const site = 'hanywang2.github.io/portfolio';
     const social = {github: '', linkedin: ''};
 
     const db = client.db('uni');
