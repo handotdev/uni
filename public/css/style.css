@@ -6,6 +6,11 @@
 body {
     background-color: #1B1F23;
     font-family: "PTSansPro";
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
 }
 
 .uni-space {
@@ -16,7 +21,12 @@ body {
 
 .uni-nav {
     background-color: #1B1F23;
-    height: 130px;
+    height: 160px;
+}
+
+.nav-item {
+    margin-left: 48px;
+    font-size: 16px;
 }
 
 .bg-uni {
@@ -34,15 +44,19 @@ body {
 
 .primary {
     color: white;
+    font-size: 48px;
 }
 
 .secondary {
     color: gray;
+    font-size: 32px;
     margin: 0 0 50px 0;
 }
 
 #filter-label {
+    margin-bottom: 50px;
     color: white;
+    font-size: 14px;
 }
 
 .filter-badge {
@@ -60,8 +74,8 @@ body {
  }
 
 .sidebar {
-    -ms-flex: 0 0 100px;
-    flex: 0 0 100px;
+    -ms-flex: 0 0 90px;
+    flex: 0 0 90px;
 }
 
 .filter {
@@ -86,8 +100,7 @@ body {
 }
 
 .card {
-    margin: 20px;
-    margin-bottom: 80px;
+    margin: 10px 20px 80px;
 }
 
 .pic {
@@ -152,3 +165,29 @@ body {
         flex: 0 0 1000px;
     }
 }
+
+/* All fade in animations */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* 
