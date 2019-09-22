@@ -10,10 +10,14 @@ function toggleMobileFilter() {
     const margin = '16px';
 
     if ($('#mo-left-sidebar').css('margin-left') === margin) {
-        $('#creatives').css('margin-left', '0');
+        if ($(window).width() < 600) {
+            $('#creatives').css('margin-left', '0');
+        }
         $('#mo-left-sidebar').css('margin-left', '-60vw');
     } else {
-        $('#creatives').css('margin-left', '60vw');
+        if ($(window).width() < 600) {
+            $('#creatives').css('margin-left', '60vw');
+        }
         $('#mo-left-sidebar').css('margin-left', '16px');
     }
 }
