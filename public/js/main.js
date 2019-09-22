@@ -95,6 +95,11 @@ function getCreatives(roles = []) {
                 connectRight += right;
           })
 
+          let mobileHTML = ``;
+          if ($(window).width() < 600) {
+
+          }
+
 
           // HTML script of the card to be added in the end
           // style is the width of the card
@@ -105,6 +110,11 @@ function getCreatives(roles = []) {
             url('${card.pic}');z-index:0" class="card-img-top round-top pic pic-size"></div>
 
             ${rolesHTML}
+
+            <div class="mo-intro">
+                <h1 class="mo-tag">${card.tag}</h1>
+                <h1 class="mo-name">${card.name}</h1>
+            </div>
 
               <div class="card-body p-0 bg-uni text-white">
               <h3 class="card-title text-white m-0">${card.name}</h3>

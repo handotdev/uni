@@ -16,12 +16,17 @@ body {
 .uni-space {
     margin-left: 60px;
     margin-right: 60px;
+    margin-top: 1rem;
     padding: 0;
 }
 
 .uni-nav {
     background-color: #1B1F23;
     height: 160px;
+}
+
+.mo-nav {
+    display: none;
 }
 
 .nav-item {
@@ -145,6 +150,10 @@ body {
     width: 20px;
 }
 
+.mo-intro {
+    display: none;
+}
+
 .p-icon {
     height: 15px;
     widows: 15px;
@@ -164,13 +173,19 @@ body {
 }
 
 @media (max-width: 600px) {
-    .navbar-toggler, .sidebar, #filter-label, .card-body {
+    .navbar, .sidebar, #filter-label, .card-body {
         display: none;
     }
 
+    .mo-nav {
+        display: block;
+        margin: 0 16px;
+        padding-top: 24px;
+        height: 60px;
+    }
+
     .uni-space {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin: 10px 16px;
     }
 
     .primary {
@@ -179,23 +194,29 @@ body {
     
     .secondary {
         font-size: 20px;
+        margin-bottom: 24px;
     }
 
     #creatives {
         margin: 0 auto;
     }
 
+    .pic {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+    }
+
     .pic-w {
-        width: 44vw;
+        width: 42vw;
     }
 
     .pic-size {
-        width: 44vw;
-        height: 44vw;
+        width: 42vw;
+        height: 42vw;
     }
 
     .card {
-        margin: 1vw 1vw 1vw;
+        margin: 2vw 2vw 2vw;
     }
 
     .round-top {
@@ -216,6 +237,25 @@ body {
     .role-icon {
         height: 10px;
         width: 10px;
+    }
+
+    .mo-intro {
+        margin-left: 8px;
+        display: block;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .mo-name {
+        font-size: 20px;
+        color: white;
+    }
+
+    .mo-tag {
+        margin-bottom: 0;
+        font-size: 12px;
+        color: #F28CB0
     }
 }
 
