@@ -18,10 +18,13 @@ function toggleMobileFilter() {
     }
 }
 
-window.addEventListener('click', function(e){   
-    if ($('#mo-left-sidebar').css('margin-left') === '16px' && !document.getElementById('mo-left-sidebar').contains(e.target)){
-      toggleMobileFilter();
-    }
+  $(document).mouseup(function(e) {
+      var container = $("#mo-left-sidebar");
+  
+      if (!container.is(e.target) && container.has(e.target).length === 0) 
+      {
+        toggleMobileFilter();
+      }
   });
 
 // Function to edit list by filter
