@@ -12,6 +12,8 @@ function toggleMobileFilter() {
 
     if ($('#mo-left-sidebar').css('margin-left') === margin) {
         if (isMobile()) {
+            $('#creatives').css('margin-left', '0');
+        } else {
             $('#creatives').css('margin-left', '');
         }
         $('#mo-left-sidebar').css('margin-left', '-60vw');
