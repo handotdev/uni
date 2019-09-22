@@ -7,29 +7,31 @@ let list = [];
 // Open mobile filter
 function toggleMobileFilter() {
 
+    // Default margin from the left for filter sidebar
     const margin = '16px';
 
     if ($('#mo-left-sidebar').css('margin-left') === margin) {
-        if ($(window).width() < 600) {
-            $('#creatives').css('margin-left', '0');
+        if (isMobile()) {
+            $('#creatives').css('margin-left', '');
         }
         $('#mo-left-sidebar').css('margin-left', '-60vw');
     } else {
-        if ($(window).width() < 600) {
+        if (isMobile()) {
             $('#creatives').css('margin-left', '60vw');
         }
         $('#mo-left-sidebar').css('margin-left', '16px');
     }
 }
 
-  $(document).mouseup(function(e) {
-      var container = $("#mo-left-sidebar");
-  
-      if (!container.is(e.target) && container.has(e.target).length === 0) 
-      {
-        toggleMobileFilter();
-      }
-  });
+// If click outside of sidebar in mobile
+$(document).mouseup(function(e) {
+    var container = $("#mo-left-sidebar");
+
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+    toggleMobileFilter();
+    }
+});
 
 // Function to edit list by filter
 function filter(btn) {
@@ -112,7 +114,7 @@ function getCreatives(roles = []) {
           // Pixels to move to the right
           let right = 30;
 
-          if ($(window).width() < 600) {
+          if (isMobile()) {
             circleRight /= 2;
             connectRight /= 2;
             right /= 2;
@@ -132,12 +134,6 @@ function getCreatives(roles = []) {
                 circleRight += right;
                 connectRight += right;
           })
-
-          let mobileHTML = ``;
-          if ($(window).width() < 600) {
-
-          }
-
 
           // HTML script of the card to be added in the end
           // style is the width of the card
@@ -168,7 +164,13 @@ function getCreatives(roles = []) {
               <div>${socialsHTML}</div>
           </div>
           </div>`;
+          // Append HTML script to creatives
           $("#creatives").append(html);
         });
       });
+}
+
+// Returns true if screen is mobile size
+function isMobile() {
+    return $(window).width() < 600;
 }
