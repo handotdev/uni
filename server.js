@@ -1,17 +1,24 @@
+// Import express for creating REST APIs
 const express = require('express');
 const app = express();
 
+// Import MongoDB client package
 const MongoClient = require('mongodb').MongoClient;
+
+// Set FoodFul MongoDB access credentials
 const uri = "mongodb+srv://admin:SweetTea@foodful-cluster-msulm.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+// Load all files in /public folder
 app.use(express.static(__dirname + '/public'));
 
+// Endpoint: Add a create to DB
 app.post(`/api/creative`, (req, res) => {
 
   client.connect(err => {
     if (err) throw err;
 
+    // Info on creative to add
     const name = 'Han Wang';
     const pic = 'https://i.postimg.cc/K8KBNTLm/han.jpg';
     const roles = ['code', 'design'];
@@ -32,6 +39,7 @@ app.post(`/api/creative`, (req, res) => {
   })
 })
 
+// Endpoint: Get all creatives from DB
 app.get(`/api/creatives`, (req, res) => {
   
     let roles = req.query.roles;
@@ -39,9 +47,11 @@ app.get(`/api/creatives`, (req, res) => {
       roles = roles.split(',');
     }
 
+    // Continue if client credentials successfully connects
     client.connect(err => {
         if (err) throw err;
-
+      
+        // Access database uni
         const db = client.db('uni');
 
         const collection = db.collection('creatives');
@@ -49,6 +59,7 @@ app.get(`/api/creatives`, (req, res) => {
 
         let filter = {};
 
+        // Filter by role if necessary
         if (roles !== undefined) {
           filter = {"roles": { $in : roles}};
         }
@@ -62,6 +73,8 @@ app.get(`/api/creatives`, (req, res) => {
 });
 
 const PORT = process.env.PORT || 8001;
+
+// Launch on localhost:PORT
 app.listen(PORT, () => {
     console.log(`Listening on PORT ${PORT}`)
 });

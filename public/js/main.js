@@ -1,8 +1,13 @@
+// Run getCreatives() upon initial load
 getCreatives();
+
+// List of all creatives
 let list = [];
 
+// Function to edit list by filter
 function filter(btn) {
 
+    // Add role pill
     const active = 'f-act'
     if ($(`#${btn}-c`).attr('class').split(/\s+/).includes(active)) {
         $(`#${btn}-c`).removeClass(active);
@@ -29,7 +34,9 @@ function filter(btn) {
     }
 }
 
+// Function to get all creatives through API
 function getCreatives(roles = []) {
+    // roles: roles by filter. Default []
 
     let filter = {};
 
@@ -41,6 +48,7 @@ function getCreatives(roles = []) {
 
         $("#creatives").empty();
 
+        // Add cards of creatives
         data.map(card => {
           let socialsHTML = ``;
       
@@ -50,9 +58,13 @@ function getCreatives(roles = []) {
               }
           })
 
+          // HTML script for role pill to be added at the end
           let rolesHTML = ``;
+          // Start margin of the pill from the right
           let circleRight = 5;
+          // Start margin of the connector
           let connectRight = circleRight + 20;
+          // Adding circle/connector depending on the number of roles (circle if 1 role, circles + connector(s) if > 1 roles)
           card.roles.map((role, i) => {
               rolesHTML += `<span class="role-circle" style="right:${circleRight}px;">
                                 <svg class="role-icon" viewBox="0 0 16 16" stroke="#F28CB0" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
@@ -67,7 +79,9 @@ function getCreatives(roles = []) {
                 circleRight += 30;
                 connectRight += 30;
           })
-      
+
+
+          // HTML script of the card to be added in the end
           let html = 
             `<div class="card border-0 round" style="width: 18rem;">
             <div id="${card._id}" style="background-image:
