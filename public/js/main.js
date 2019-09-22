@@ -1,8 +1,28 @@
 // Run getCreatives() upon initial load
 getCreatives();
 
-// List of all creatives
+// List of all creative roles
 let list = [];
+
+// Open mobile filter
+function toggleMobileFilter() {
+
+    const margin = '16px';
+
+    if ($('#mo-left-sidebar').css('margin-left') === margin) {
+        $('#creatives').css('margin-left', '0');
+        $('#mo-left-sidebar').css('margin-left', '-60vw');
+    } else {
+        $('#creatives').css('margin-left', '60vw');
+        $('#mo-left-sidebar').css('margin-left', '16px');
+    }
+}
+
+window.addEventListener('click', function(e){   
+    if ($('#mo-left-sidebar').css('margin-left') === '16px' && !document.getElementById('mo-left-sidebar').contains(e.target)){
+      toggleMobileFilter();
+    }
+  });
 
 // Function to edit list by filter
 function filter(btn) {
@@ -13,12 +33,19 @@ function filter(btn) {
     if ($(`#${btn}-c`).attr('class').split(/\s+/).includes(active)) {
         $(`#${btn}-c`).removeClass(active);
         $(`#${btn}-i`).attr('stroke', '#FFF');
+        $(`#mo-${btn}-c`).removeClass(active);
+        $(`#mo-${btn}-i`).attr('stroke', '#FFF');
+        $(`#mo-${btn}-l`).css('color', '#FFF');
 
         list.map((role, i) => {
             if (role === btn) {
                 list.splice(i, 1);
             }
         });
+
+        if (list.length === 0) {
+            $(`#mo-filter`).attr('fill', 'none');
+        }
         
         getCreatives(list);
 
@@ -28,6 +55,10 @@ function filter(btn) {
     } else {
         $(`#${btn}-c`).addClass(active);
         $(`#${btn}-i`).attr('stroke', '#1B1F23');
+        $(`#mo-${btn}-c`).addClass(active);
+        $(`#mo-${btn}-i`).attr('stroke', '#1B1F23');
+        $(`#mo-${btn}-l`).css('color', '#F28CB0');
+        $(`#mo-filter`).attr('fill', '#F28CB0');
 
         list.push(btn);
         getCreatives(list);

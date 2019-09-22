@@ -29,6 +29,11 @@ body {
     display: none;
 }
 
+#mo-left-sidebar {
+    display: none;
+    transition: 0.5s;
+}
+
 .nav-item {
     margin-left: 48px;
     font-size: 16px;
@@ -184,6 +189,26 @@ body {
         height: 60px;
     }
 
+    #mo-left-sidebar {
+        display: block;
+        position: absolute;
+        /* margin-left: 16px; */
+        margin-left: -60vw;
+        width: 50vw;
+        z-index: 9;
+    }
+
+    .mo-filter-label {
+        font-size: 20px;
+        color: white;
+    }
+
+    .filter {
+        height: 36px;
+        line-height: 36px;
+        width: 36px;
+    }
+
     .uni-space {
         margin: 10px 16px;
     }
@@ -199,6 +224,7 @@ body {
 
     #creatives {
         margin: 0 auto;
+        transition: 0.5s;
     }
 
     .pic {
