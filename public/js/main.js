@@ -7,8 +7,9 @@ let list = [];
 // Function to edit list by filter
 function filter(btn) {
 
-    // Add role pill
+    // Update filter button
     const active = 'f-act'
+    // Unactivate
     if ($(`#${btn}-c`).attr('class').split(/\s+/).includes(active)) {
         $(`#${btn}-c`).removeClass(active);
         $(`#${btn}-i`).attr('stroke', '#FFF');
@@ -22,7 +23,8 @@ function filter(btn) {
         getCreatives(list);
 
         $(`#fl-${btn}`).remove();
-
+    
+    // Activate
     } else {
         $(`#${btn}-c`).addClass(active);
         $(`#${btn}-i`).attr('stroke', '#1B1F23');
@@ -30,7 +32,10 @@ function filter(btn) {
         list.push(btn);
         getCreatives(list);
 
-        $(`#filter-label`).append(` <span id="fl-${btn}" class="badge badge-pill filter-badge">${btn.toUpperCase()}</span>`);
+        $(`#filter-label`).append(` <span id="fl-${btn}" class="badge badge-pill filter-badge ml-2" style="font-size: 14px;">${btn.toUpperCase()}<button class="btn" onclick="filter('${btn}')"><svg class="ml-1" width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4L4 12" stroke="#E1E4E8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 4L12 12" stroke="#E1E4E8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></button></span>`);
     }
 }
 
