@@ -109,6 +109,10 @@ body {
     background-size: cover;
 }
 
+.pic-w {
+    width: 273px;
+}
+
 .pic-size {
     height: 277px;
     width: 273px;
@@ -160,9 +164,58 @@ body {
 }
 
 @media (max-width: 600px) {
-    .sidebar {
-        -ms-flex: 0 0 1000px;
-        flex: 0 0 1000px;
+    .navbar-toggler, .sidebar, #filter-label, .card-body {
+        display: none;
+    }
+
+    .uni-space {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .primary {
+        font-size: 24px;
+    }
+    
+    .secondary {
+        font-size: 20px;
+    }
+
+    #creatives {
+        margin: 0 auto;
+    }
+
+    .pic-w {
+        width: 44vw;
+    }
+
+    .pic-size {
+        width: 44vw;
+        height: 44vw;
+    }
+
+    .card {
+        margin: 1vw 1vw 1vw;
+    }
+
+    .round-top {
+        border-radius: 5px;
+    }
+
+    .role-circle {
+        height: 20px;
+        line-height: 20px;
+        width: 20px;
+    }
+    
+    .role-connect {
+        height: 20px;
+        width: 15px;
+    }
+
+    .role-icon {
+        height: 10px;
+        width: 10px;
     }
 }
 

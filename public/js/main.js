@@ -70,6 +70,16 @@ function getCreatives(roles = []) {
           // Start margin of the connector
           let connectRight = circleRight + 20;
           // Adding circle/connector depending on the number of roles (circle if 1 role, circles + connector(s) if > 1 roles)
+
+          // Pixels to move to the right
+          let right = 30;
+
+          if ($(window).width() < 600) {
+            circleRight /= 2;
+            connectRight /= 2;
+            right /= 2;
+          }
+
           card.roles.map((role, i) => {
               rolesHTML += `<span class="role-circle" style="right:${circleRight}px;">
                                 <svg class="role-icon" viewBox="0 0 16 16" stroke="#F28CB0" fill="none" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round">
@@ -81,15 +91,15 @@ function getCreatives(roles = []) {
                     rolesHTML += `<span class="role-connect" style="right:${connectRight}px;"></span>`;
                 }
 
-                circleRight += 30;
-                connectRight += 30;
+                circleRight += right;
+                connectRight += right;
           })
 
 
           // HTML script of the card to be added in the end
           // style is the width of the card
           let html = 
-            `<div class="card border-0 round" style="width: 273px;">
+            `<div class="card border-0 round pic-w">
             <div id="${card._id}" style="background-image:
             linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(27, 31, 35, 1)),
             url('${card.pic}');z-index:0" class="card-img-top round-top pic pic-size"></div>
