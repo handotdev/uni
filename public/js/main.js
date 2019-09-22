@@ -82,11 +82,12 @@ function getCreatives(roles = []) {
 
 
           // HTML script of the card to be added in the end
+          // style is the width of the card
           let html = 
-            `<div class="card border-0 round" style="width: 18rem;">
+            `<div class="card border-0 round" style="width: 273px;">
             <div id="${card._id}" style="background-image:
             linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(27, 31, 35, 1)),
-            url('${card.pic}');z-index:0" class="card-img-top round-top pic"></div>
+            url('${card.pic}');z-index:0" class="card-img-top round-top pic pic-size"></div>
 
             ${rolesHTML}
 

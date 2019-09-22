@@ -8,6 +8,12 @@ body {
     font-family: "PTSansPro";
 }
 
+.uni-space {
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 0;
+}
+
 .uni-nav {
     background-color: #1B1F23;
     height: 130px;
@@ -82,11 +88,14 @@ body {
 }
 
 .pic {
-    height: 300px;
-    width: 300px;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     background-size: cover;
+}
+
+.pic-size {
+    height: 277px;
+    width: 273px;
 }
 
 .role-circle {
@@ -130,8 +139,8 @@ body {
 }
 
 .round-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 @media (max-width: 600px) {
