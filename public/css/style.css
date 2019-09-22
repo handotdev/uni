@@ -28,6 +28,7 @@ body {
 }
 
 .text-desc {
+    height: 76px;
     color: #959DA5;
 }
 
@@ -65,6 +66,7 @@ body {
 
 .filter {
     margin: 10px;
+    margin-left: 0;
     height: 40px;
     line-height: 40px;
     width: 40px;
@@ -85,6 +87,7 @@ body {
 
 .card {
     margin: 20px;
+    margin-bottom: 80px;
 }
 
 .pic {
@@ -100,7 +103,7 @@ body {
 
 .role-circle {
     position: absolute;
-    top: 15px;
+    top: 12px;
     height: 40px;
     line-height: 40px;
     width: 40px;
@@ -113,7 +116,7 @@ body {
 
 .role-connect {
     position: absolute;
-    top: 15px;
+    top: 12px;
     height: 40px;
     width: 30px;
     background-color: #1B1F23;

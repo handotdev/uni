@@ -60,8 +60,8 @@ function getCreatives(roles = []) {
 
           // HTML script for role pill to be added at the end
           let rolesHTML = ``;
-          // Start margin of the pill from the right
-          let circleRight = 5;
+          // Start margin of the pill from the right (px)
+          let circleRight = 12;
           // Start margin of the connector
           let connectRight = circleRight + 20;
           // Adding circle/connector depending on the number of roles (circle if 1 role, circles + connector(s) if > 1 roles)
@@ -94,7 +94,7 @@ function getCreatives(roles = []) {
               <div class="card-body p-0 bg-uni text-white">
               <h3 class="card-title text-white m-0">${card.name}</h3>
               <h6 class="card-text text-handle mb-3">${card.tag}</h6>
-              <h6 class="card-text text-desc mb-5">${card.bio}</h6>
+              <h6 class="card-text text-desc">${card.bio}</h6>
               <br>
               <div>
                   <svg class="p-icon" viewBox="0 0 16 16" fill="none">
