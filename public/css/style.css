@@ -174,6 +174,10 @@ body {
     font-size: 15px;
 }
 
+.p-link:hover {
+    color: #F28CB0;
+}
+
 .round {
     border-radius: 15px;
 }
