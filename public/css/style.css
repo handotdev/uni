@@ -45,14 +45,12 @@ body {
 
 .text-handle, .text-link {
     color: #F28CB0;
-    border-bottom: 1px solid transparent;
-    transition: all .3s ease-in;
+    transition: all .28s;
 }
 
 .text-link:hover {
-    color: #F28CB0;
+    color: #F7BAD0;
     text-decoration: none;
-    border-bottom: 1px solid #F28CB0;
 }
 
 .text-desc {
@@ -193,6 +191,14 @@ body {
 .round-top {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.social-icon {
+    transition: .5s;
+}
+
+.social-icon:hover {
+    fill: #F28CB0;
 }
 
 @media (max-width: 600px) {

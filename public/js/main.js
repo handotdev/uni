@@ -105,7 +105,7 @@ function getCreatives(roles = []) {
       
           Object.keys(card.social).map(icon => {
               if (icon in socialsDict) {
-                  socialsHTML += socialsDict[icon];
+                  socialsHTML += `<a href=${card.social[icon]} target="_blank">${socialsDict[icon]}</a>`;
               }
           })
 
