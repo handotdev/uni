@@ -43,13 +43,13 @@ body {
     background-color: #1B1F23;
 }
 
-.text-handle {
+.text-handle, .text-link {
     color: #F28CB0;
     border-bottom: 1px solid transparent;
     transition: all .3s ease-in;
 }
 
-.text-handle:hover {
+.text-link:hover {
     color: #F28CB0;
     text-decoration: none;
     border-bottom: 1px solid #F28CB0;

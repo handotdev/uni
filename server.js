@@ -6,7 +6,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
 // Set FoodFul MongoDB access credentials
-const uri = "mongodb+srv://admin:SweetTea@foodful-cluster-msulm.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://creativity:aJUfmZr63hauwhZ5@uni-azs3o.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Load all files in /public folder
@@ -18,7 +18,7 @@ app.post(`/api/creative`, (req, res) => {
   client.connect(err => {
     if (err) throw err;
 
-    // Info on creative to add
+    // Adding one sample creative
     const name = 'Han Wang';
     const pic = 'https://i.postimg.cc/K8KBNTLm/han.jpg';
     const roles = ['code', 'design'];
