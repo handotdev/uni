@@ -64,11 +64,11 @@ app.get(`/api/creatives`, (req, res) => {
           filter = {"roles": { $in : roles}};
         }
 
-        collection.find(filter).toArray((err, docs) => {
-        if (err) throw err;
-          res.send(docs);
-          client.close();
-        });
+        collection.find(filter).sort({ num: -1 }).toArray((err, docs) => {
+          if (err) throw err;
+            res.send(docs);
+            client.close();
+          });
     })
 });
 
