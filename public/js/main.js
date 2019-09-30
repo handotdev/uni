@@ -147,7 +147,7 @@ function getCreatives(roles = []) {
             `<div class="card border-0 round pic-w">
             <a href="mailto:hello@unicreative.co?subject=Request">
             <div id="${card._id}" style="background-image:
-            linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(27, 31, 35, 1)),
+            linear-gradient(to bottom, rgba(245, 245, 245, 0) 50%, rgba(27, 31, 35, 1) 100%),
             url('${card.pic}');z-index:0" class="card-img-top round-top pic pic-size"></div>
             </a>
 
