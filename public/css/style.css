@@ -277,9 +277,9 @@ body {
 }
 
 .social-icon {
-    height: 20px;
-    width: 20px;
-    margin: 6px;
+    height: 16px;
+    width: 16px;
+    margin-right: 6px;
     transition: .28s;
 }
 
