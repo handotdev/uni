@@ -143,6 +143,7 @@ function getCreatives(roles = []) {
 
           // HTML script of the card to be added in the end
           // style is the width of the card
+
           let html = 
             `<div class="card border-0 round pic-w">
             <a href="mailto:hello@unicreative.co?subject=Request">
@@ -154,13 +155,13 @@ function getCreatives(roles = []) {
             ${rolesHTML}
 
             <div class="mo-intro">
-                <h1 class="mo-tag">${card.tag}</h1>
+                <h1 class="mo-tag">@${card.tag}</h1>
                 <h1 class="mo-name">${card.name}</h1>
             </div>
 
               <div class="card-body p-0 bg-uni text-white">
               <h3 class="card-title text-white m-0">${card.name}</h3>
-              <h6 class="card-text text-handle mb-3">${card.tag}</h6>
+              <h6 class="card-text text-handle mb-3">@${card.tag}</h6>
               <h6 class="card-text text-desc">${card.bio}</h6>
               <br>
               <div>
