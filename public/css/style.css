@@ -1,27 +1,83 @@
-/* TYPOGRAPHY */
-@font-face {
-    font-family: "PTSansPro";
-    src: url("../fonts/PTSansPro-Light.otf") format("opentype")
-}
-
 /* COLORS */
 :root {
     --black: #000000;
     --white: #FFFFFF;
+    
     --red: #E84680;
     --dark-red: #CB3B6F;
     --light-red: #F28CB0;
+    
     --yellow: #FADE4D;
     --dark-yellow: #DEC544;
     --light-yellow: #FADE4D;
+    
     --purple: #697CE0;
     --dark-purple: #5565BC;
     --light-purple: #BFCAF3;
+    
     --gray-01: #E1E4E8;
     --gray-02: #959DA5;
     --gray-03: #586069;
     --gray-04: #2F363D;
     --gray-05: #1B1F23;
+}
+
+/* TYPOGRAPHY */
+@font-face {
+    font-family: 'PTSansPro';
+    src: url(../fonts/PTSansPro-Regular.otf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'PTSansPro';
+    src: url(../fonts/PTSansPro-Demi.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../fonts/OpenSans-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+h1 {
+    font-family: "PTSansPro";
+}
+h2 {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+h3 {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+h4 {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+h5 {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+h6 {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+p {
+    font-family: "OpenSans";
+    font-weight: normal;
+}
+a {
+    font-family: "OpenSans";
+    font-weight: normal;
 }
 
 body {
@@ -43,7 +99,7 @@ body {
 
 .uni-nav {
     background-color: var(--gray-05);
-    height: 138px;
+    height: 105px;
 }
 
 .mo-nav {
@@ -52,7 +108,7 @@ body {
 
 #mo-left-sidebar {
     display: none;
-    transition: 0.5s;
+    transition: .28s;
 }
 
 .nav-item {
@@ -65,7 +121,7 @@ body {
 }
 
 .text-handle, .text-link {
-    color: #F28CB0;
+    color: var(--light-red);
     transition: all .28s;
 }
 
@@ -77,6 +133,7 @@ body {
 .text-desc {
     height: 76px;
     color: var(--gray-02);
+    transition: .28s;
 }
 
 .primary {
@@ -85,20 +142,22 @@ body {
 }
 
 .secondary {
-    color: gray;
+    color: var(--gray-02);
     font-size: 32px;
-    margin: 0 0 50px 0;
+    margin-bottom: 36px;
 }
 
 #filter-label {
-    margin-bottom: 50px;
+    margin-bottom: 24px;
     color: white;
     font-size: 14px;
 }
 
 .filter-badge {
+    font-family: "OpenSans";
+    font-weight: normal;
     background-color: var(--gray-04);
-    color: #F28CB0;
+    color: var(--light-red);
 }
 
 .btn {
@@ -128,7 +187,7 @@ body {
 }
 
 .f-act {
-    background-color: #F28CB0;
+    background-color: var(--light-red);
 }
 
 .icon {
@@ -144,12 +203,15 @@ body {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     background-size: cover;
-    transition: .5s;
+    transition: .28s;
 }
 
-.pic:hover {
+.card:hover .pic {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
+}
+.card:hover .text-desc {
+    color: var(--gray-01);
 }
 
 .pic-w {
@@ -202,7 +264,7 @@ body {
 }
 
 .p-link:hover {
-    color: #F28CB0;
+    color: var(--light-red);
 }
 
 .round {
@@ -215,11 +277,24 @@ body {
 }
 
 .social-icon {
-    transition: .5s;
+    height: 20px;
+    width: 20px;
+    margin: 6px;
+    transition: .28s;
 }
 
 .social-icon:hover {
-    fill: #F28CB0;
+    fill: var(--light-red);
+}
+
+.social-stroke {
+    stroke: var(--gray-02);
+}
+
+.social-stroke:hover {
+    stroke: var(--light-red);
+    fill: var(--gray-05);
+    transition: .28s;
 }
 
 @media (max-width: 600px) {
@@ -269,7 +344,7 @@ body {
 
     #creatives {
         margin: 0 auto;
-        transition: 0.5s;
+        transition: .28s;
     }
 
     .pic {
@@ -326,7 +401,7 @@ body {
     .mo-tag {
         margin-bottom: 0;
         font-size: 12px;
-        color: #F28CB0
+        color: var(--light-red)
     }
 }
 
