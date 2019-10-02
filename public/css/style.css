@@ -60,8 +60,10 @@ h3 {
     font-weight: normal;
 }
 h4 {
-    font-family: "OpenSans";
+    font-family: "PTSansPro";
     font-weight: normal;
+    font-size: 16pt;
+    color: var(--gray-02);
 }
 h5 {
     font-family: "OpenSans";
@@ -78,6 +80,7 @@ p {
 a {
     font-family: "OpenSans";
     font-weight: normal;
+    text-decoration: none;
 }
 
 body {
@@ -89,6 +92,12 @@ body {
          -o-animation: fadein 1s; /* Opera < 12.1 */
             animation: fadein 1s;
 }
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 .uni-space {
     margin-left: 60px;
@@ -294,6 +303,32 @@ body {
 .social-stroke:hover {
     stroke: var(--light-red);
     fill: var(--gray-05);
+    transition: .28s;
+}
+
+.highlight {
+    color: var(--gray-02);
+    transition: .28s;
+}
+.highlight:hover {
+    color: var(--light-red);
+    text-decoration: none;
+    transition: .28s;
+}
+
+.uni-social-container {
+    width: 216px;
+    margin-left: 48px;
+}
+
+.uni-social {
+    fill: var(--gray-02);
+    margin-left: 12px;
+    transition: .28s;
+}
+
+.uni-social:hover {
+    fill: var(--light-red);
     transition: .28s;
 }
 
